@@ -1,0 +1,374 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Cores base da Grécia */
+:root {
+    --azul-grecia: #0d5db8;
+    --azul-claro: #4fa3ff;
+    --branco: #ffffff;
+}
+
+/* Body */
+body {
+    background-color: var(--branco);
+    color: var(--azul-grecia);
+}
+
+/* Header */
+.header {
+    width: 100%;
+    background-color: var(--branco);
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+
+    /* Bordas azuis estilo grego */
+    border-top: 4px solid var(--azul-grecia);
+    border-bottom: 4px solid var(--azul-grecia);
+}
+
+/* Footer */
+.footer {
+    margin-top: 60px;
+    padding: 20px 0;
+    text-align: center;
+    background-color: white;
+    border-top: 4px solid var(--azul-grecia);
+}
+
+.footer p {
+    color: var(--azul-grecia);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Menu */
+/* Container do header */
+.menu-container {
+    width: 1225px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    font-weight: bold;
+    color: var(--azul-grecia);
+    font-size: 18px;
+}
+
+/* Botão hamburguer (escondido no desktop) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--azul-grecia);
+    cursor: pointer;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--azul-grecia); /* Contraste com fundo branco */
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hover elegante */
+.menu a:hover {
+    color: var(--azul-claro);
+    border-bottom: 2px solid var(--azul-claro);
+}
+
+/* Conteúdo principal */
+/* Slider principal */
+/* Área visível */
+.content {
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* Container deslizável */
+.slider {
+    display: flex;
+    width: 200vw;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Cada página ocupa exatamente a tela */
+.page {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.page.home {
+    flex-direction: column;
+    align-items: center;
+}
+
+.page.home .alert-beta {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Caixa de aviso - Beta */
+.alert-beta {
+    max-width: 980px;
+    margin: 20px auto;
+    padding: 20px 25px;
+    background-color: #f5faff;
+    border-left: 6px solid var(--azul-grecia);
+    color: var(--azul-grecia);
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Título */
+.alert-beta strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* Texto */
+.alert-beta p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* SOBRE layout */
+.sobre-container {
+    width: 1225px;
+    display: flex;
+    gap: 40px;
+    padding: 40px 0;
+}
+
+.sobre-conteudo {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.sobre-conteudo.active {
+    display: block;
+}
+
+/* Menu lateral */
+.sobre-menu {
+    width: 250px;
+    border-right: 3px solid var(--azul-grecia);
+}
+
+/* Menu ativo */
+.sobre-menu a {
+    display: block;
+    padding: 15px;
+    color: var(--azul-grecia);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.sobre-menu a.active {
+    background-color: var(--azul-claro);
+    color: white;
+}
+
+/* Animação suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sobre-menu ul {
+    list-style: none;
+}
+
+.sobre-menu li {
+    padding: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--azul-grecia);
+}
+
+.sobre-menu li:hover {
+    background-color: var(--azul-claro);
+    color: white;
+}
+
+/* Texto */
+.sobre-texto {
+    flex: 1;
+}
+
+.sobre-texto h2 {
+    margin-bottom: 15px;
+    color: var(--azul-grecia);
+}
+
+.sobre-texto p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Painel da imagem */
+.hero {
+    width: 980px;
+    height: 768px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagem */
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===========================
+   MOBILE (até 768px)
+=========================== */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .header {
+        padding: 15px 0;
+    }
+
+    .menu-container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+     /* Mostra o hamburguer */
+    .menu-toggle {
+        display: block;
+    }
+
+     /* Esconde menu inicialmente */
+    .menu {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        border-top: 3px solid var(--azul-grecia);
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .alert-beta {
+            margin: 15px;
+            padding: 15px;
+        }
+
+        .alert-beta strong {
+            font-size: 15px;
+        }
+
+        .alert-beta p {
+            font-size: 13px;
+        }
+    }
+
+    /* Menu aberto */
+    .menu.active {
+        display: block;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .menu a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    /* HERO (imagem principal) */
+    .hero {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .hero img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* SOBRE */
+    .sobre-container {
+        width: 100%;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    /* Menu lateral vira topo */
+    .sobre-menu {
+        width: 100%;
+        border-right: none;
+        border-bottom: 3px solid var(--azul-grecia);
+    }
+
+    .sobre-menu ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .sobre-menu li {
+        padding: 10px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* Texto */
+    .sobre-texto h2 {
+        font-size: 20px;
+    }
+
+    .sobre-texto p {
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        .footer p {
+            font-size: 13px;
+        }
+    }
+}
